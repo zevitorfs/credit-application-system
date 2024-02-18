@@ -1,4 +1,4 @@
-package entity
+package me.jose.credit.application.system.entity
 
 //import org.hibernate.validator.constraints.UUID
 import jakarta.persistence.*

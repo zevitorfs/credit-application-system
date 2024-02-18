@@ -1,4 +1,4 @@
-package entity
+package me.jose.credit.application.system.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.Embeddable

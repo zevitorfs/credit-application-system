@@ -1,7 +1,7 @@
-package entity
+package me.jose.credit.application.system.entity
 
 import jakarta.persistence.*
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address
+//import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address
 
 @Entity
 @Table(name = "Cliente")

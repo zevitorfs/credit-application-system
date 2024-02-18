@@ -1,8 +1,12 @@
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
   datasource:
     url: jdbc:h2:mem:credit_application_system_db
     username: cami
-    password: 1234
+
   h2:
     console:
       enabled: true
@@ -10,5 +14,3 @@ spring:
       settings:
         trace: false
         web-allow-others: false
-
-
