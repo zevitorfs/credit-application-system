@@ -30,7 +30,7 @@ class CreditResource(
     // Metodod para salva um credito no banco de dados
     fun saveCredit(@RequestBody creditDTO: CreditDto): ResponseEntity<String>{
         val credit : Credit = this.creditService.save(creditDTO.toEntity())
-        return ResponseEntity.status(HttpStatus.CREATED).body( "Credit ${credit.creditCode} - Customer ${credit.customer?.firstName} saved!!")
+        return ResponseEntity.status(HttpStatus.CREATED).body( "Credit ${credit.creditCode} - Customer ${credit.customer?.email} saved!!")
     }
     @GetMapping
     fun findAllByCostumerId(@RequestParam(value = "costumerId") costumerId: Long): ResponseEntity< List<CreditViewList>>{
