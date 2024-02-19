@@ -14,7 +14,7 @@ data class Credit(
     @Column(nullable = false) val numberOFInstallments: Int=0,
     // O campo status é um enum entao usar esse anotaçaõ
     @Enumerated val status: Status = Status.IN_PROGESS,
-    @ManyToOne val customer: Customer? = null,
+    @ManyToOne var customer: Customer? = null,
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long? = null
 
 )
