@@ -1,5 +1,6 @@
 package me.jose.credit.application.system.controller
 
+import jakarta.validation.Valid
 import me.jose.credit.application.system.dto.CreditDto
 import me.jose.credit.application.system.dto.CreditView
 import me.jose.credit.application.system.dto.CreditViewList
@@ -28,7 +29,7 @@ class CreditResource(
     @PostMapping
     //Nessa função vamos passa um dto contendo as informaçõs para fazer esses salvamentos
     // Metodod para salva um credito no banco de dados
-    fun saveCredit(@RequestBody creditDTO: CreditDto): ResponseEntity<String>{
+    fun saveCredit(@RequestBody @Valid  creditDTO: CreditDto): ResponseEntity<String>{
         val credit : Credit = this.creditService.save(creditDTO.toEntity())
         return ResponseEntity.status(HttpStatus.CREATED).body( "Credit ${credit.creditCode} - Customer ${credit.customer?.email} saved!!")
     }

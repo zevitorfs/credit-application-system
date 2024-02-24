@@ -26,9 +26,9 @@ class CostumerResource(
 ){
     @PostMapping
     // Essa anotação indica que é para salva no banco de dados
-    fun salveCustomer(@RequestBody @Valid  customerDTO: CustomerDto): ResponseEntity<String> {
+    fun salveCustomer(@RequestBody @Valid  customerDTO: CustomerDto): ResponseEntity<CustomerView> {
         val savedCustomer = this.customerService.save(customerDTO.toEntity())
-        return ResponseEntity.status(HttpStatus.CREATED).body("Customer ${savedCustomer.email} saved!")
+        return ResponseEntity.status(HttpStatus.CREATED).body( CustomerView(savedCustomer)) //Pq dessa alteração é para detalha esse customer view e com o customer view o pessoal do front conseguir detalha essa frase
 
     }
     @GetMapping("/{id}")
